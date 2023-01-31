@@ -1,0 +1,5 @@
+INSERT INTO student (id, name, dob, email) VALUES (1, 'Elon Musk', '2000-01-01', 'musk@twitter.com');
+INSERT INTO student (id, name, dob, email) VALUES (2, 'Theodor Roosevelt', '1843-03-22', '');
+INSERT INTO student (id, name, dob, email) VALUES (3, 'Horst Horstmann', '1975-02-25', 'horst231@gmx.de');
+INSERT INTO student (id, name, dob, email) VALUES (4, 'Janine Winkler', '1984-08-30', 'janine81@hotmail.com');
+INSERT INTO student (id, name, dob, email) VALUES (5, 'Vladimir Vladimirowitsch', '1977-12-12', 'vlad@yandex.ru');
