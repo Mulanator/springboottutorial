@@ -17,8 +17,13 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<Student> getStudents() {
+    public List<StudentDTO> getStudents() {
         return this.studentService.getStudents();
+    }
+
+    @GetMapping(path = "{studentID}")
+    public StudentDTO getStudent(@PathVariable("studentID") Long id) {
+        return this.studentService.getStudent(id);
     }
 
     @PostMapping
