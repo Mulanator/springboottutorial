@@ -1,5 +1,6 @@
-package com.example.springboottutorial.student;
+package com.example.springboottutorial.student.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

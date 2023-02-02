@@ -1,6 +1,9 @@
-package com.example.springboottutorial.student;
+package com.example.springboottutorial.student.controller;
 
+import com.example.springboottutorial.student.controller.dto.Student;
+import com.example.springboottutorial.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,18 +19,18 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping
-    public List<StudentDTO> getStudents() {
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Student> getStudents() {
         return this.studentService.getStudents();
     }
 
-    @GetMapping(path = "{studentID}")
-    public StudentDTO getStudent(@PathVariable("studentID") Long id) {
+    @GetMapping(path = "{studentID}", produces = MediaType.APPLICATION_JSON_VALUE )
+    public Student getStudent(@PathVariable("studentID") Long id) {
         return this.studentService.getStudent(id);
     }
 
     @PostMapping
-    public void registerNewStudent(@RequestBody Student student) {
+    public void registerNewStudent(@RequestBody com.example.springboottutorial.student.entity.Student student) {
         this.studentService.addNewStudent(student);
     }
 
@@ -36,6 +39,7 @@ public class StudentController {
         this.studentService.deleteStudent(id);
     }
 
+    //TODO: StudentUpdateDTO mit Felder die im Update erlaubt sind
     @PutMapping(path =  "{studentID}")
     public void updateStudent(@PathVariable("studentID") Long id,
                               @RequestParam(required = false) String name,

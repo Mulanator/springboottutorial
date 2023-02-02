@@ -1,4 +1,4 @@
-package com.example.springboottutorial.student;
+package com.example.springboottutorial.student.config;
 
 import org.springframework.context.annotation.Configuration;
 
